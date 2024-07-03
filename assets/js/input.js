@@ -39,6 +39,7 @@ myBtn.addEventListener("click" , function(){
    for(i = 0 ; i < randomWord.length ; i++){
     const span = document.createElement("span");
     underline.appendChild(span);
+    span.textContent = "___"
    }
    console.log(randomWord);
     
