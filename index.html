@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="./assets/css/output.css" />
+  </head>
+  <body>
+    <div class="container grid grid-cols-2 m-16">
+      <!-- hangman pics -->
+      <div class="flex items-start justify-center flex-col">
+        <img src="./assets/img/hangman-0.svg" alt="">
+        <img class="hidden" src="./assets/img/hangman-1.svg" alt="">
+        <img class="hidden" src="./assets/img/hangman-2.svg" alt="">
+        <img class="hidden" src="./assets/img/hangman-3.svg" alt="">
+        <img class="hidden" src="./assets/img/hangman-4.svg" alt="">
+        <img class="hidden" src="./assets/img/hangman-5.svg" alt="">
+        <img class="hidden" src="./assets/img/hangman-6.svg" alt="">
+      </div>
+      <!--end of hangman pics -->
+
+      <div class="flex flex-col text-center items-center gap-14">
+        <!-- underline -->
+        <div class="flex gap-4" id="underline">
+          <span class="text-3xl font-extrabold">__</span>
+          <span class="text-3xl font-extrabold">__</span>
+          <span class="text-3xl font-extrabold">__</span>
+          <span class="text-3xl font-extrabold">__</span>
+          <span class="text-3xl font-extrabold">__</span>
+          <span class="text-3xl font-extrabold">__</span>
+          <span class="text-3xl font-extrabold">__</span>
+          <span class="text-3xl font-extrabold">__</span>
+        </div>
+        <!--end of underline -->
+        <!-- hint -->
+        <p class="container text-3xl font-bold">
+          Hint:An art from using colors on a surface to create images or
+          expression.
+        </p>
+        <!--end of hint -->
+        <!-- guess counter -->
+        <span class="text-3xl font-bold">
+          Incorrect guesses : <span class="text-red-700"> 0 / 6 </span>
+        </span>
+        <!--end of guess counter -->
+        <!-- keyboard -->
+        <div class="flex flex-wrap justify-center gap-2">
+          <button
+            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
+          >
+            A
+          </button>
+          <button
+            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
+          >
+            B
+          </button>
+          <button
+            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
+          >
+            C
+          </button>
+          <button
+            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
+          >
+            D
+          </button>
+          <button
+            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
+          >
+            E
+          </button>
+          <button
+            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
+          >
+            F
+          </button>
+          <button
+            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
+          >
+            G
+          </button>
+          <button
+            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
+          >
+            H
+          </button>
+          <button
+            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
+          >
+            I
+          </button>
+          <button
+            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
+          >
+            J
+          </button>
+          <button
+            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
+          >
+            K
+          </button>
+          <button
+            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
+          >
+            L
+          </button>
+          <button
+            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
+          >
+            M
+          </button>
+          <button
+            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
+          >
+            N
+          </button>
+          <button
+            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
+          >
+            O
+          </button>
+          <button
+            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
+          >
+            P
+          </button>
+          <button
+            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
+          >
+            Q
+          </button>
+          <button
+            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
+          >
+            R
+          </button>
+          <button
+            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
+          >
+            S
+          </button>
+          <button
+            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
+          >
+            T
+          </button>
+          <button
+            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
+          >
+            U
+          </button>
+          <button
+            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
+          >
+            V
+          </button>
+          <button
+            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
+          >
+            W
+          </button>
+          <button
+            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
+          >
+            X
+          </button>
+          <button
+            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
+          >
+            Y
+          </button>
+          <button
+            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
+          >
+            Z
+          </button>
+        </div>
+        <!--end of keyboard -->
+        <!-- start btn -->
+         <button id="myBtn" type="button" class="text-3xl bg-red-600 rounded-xl p-4 hover:text-white hover:bg-red-700 duration-500">start</button>
+        <!--end of start btn -->
+      </div>
+    </div>
+
+    <script src="./assets/js/input.js"></script>
+  </body>
+</html>
