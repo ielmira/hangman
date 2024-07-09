@@ -5,185 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hangman Game</title>
     <link rel="stylesheet" href="./assets/css/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
   </head>
   <body>
-    <div class="container grid grid-cols-2 m-16">
+    <div class="container grid grid-cols-2 m-16 relative">
       <!-- hangman pics -->
-      <div class="flex items-start justify-center flex-col">
-        <img src="./assets/img/hangman-0.svg" alt="">
-        <img class="hidden" src="./assets/img/hangman-1.svg" alt="">
-        <img class="hidden" src="./assets/img/hangman-2.svg" alt="">
-        <img class="hidden" src="./assets/img/hangman-3.svg" alt="">
-        <img class="hidden" src="./assets/img/hangman-4.svg" alt="">
-        <img class="hidden" src="./assets/img/hangman-5.svg" alt="">
-        <img class="hidden" src="./assets/img/hangman-6.svg" alt="">
+      <div class="flex items-start justify-center flex-col hangImagesDiv">
+        <img id="hangImg" src="./assets/img/hangman-0.svg" alt="" />
+        <img
+          id="hanImg"
+          class="hidden"
+          src="./assets/img/hangman-1.svg"
+          alt=""
+        />
+        <img
+          id="hanImg"
+          class="hidden"
+          src="./assets/img/hangman-2.svg"
+          alt=""
+        />
+        <img
+          id="hanImg"
+          class="hidden"
+          src="./assets/img/hangman-3.svg"
+          alt=""
+        />
+        <img
+          id="hanImg"
+          class="hidden"
+          src="./assets/img/hangman-4.svg"
+          alt=""
+        />
+        <img
+          id="hanImg"
+          class="hidden"
+          src="./assets/img/hangman-5.svg"
+          alt=""
+        />
+        <img
+          id="hanImg"
+          class="hidden"
+          src="./assets/img/hangman-6.svg"
+          alt=""
+        />
       </div>
       <!--end of hangman pics -->
 
       <div class="flex flex-col text-center items-center gap-14">
         <!-- underline -->
-        <div class="flex gap-4" id="underline">
-          <span class="text-3xl font-extrabold">__</span>
-          <span class="text-3xl font-extrabold">__</span>
-          <span class="text-3xl font-extrabold">__</span>
-          <span class="text-3xl font-extrabold">__</span>
-          <span class="text-3xl font-extrabold">__</span>
-          <span class="text-3xl font-extrabold">__</span>
-          <span class="text-3xl font-extrabold">__</span>
-          <span class="text-3xl font-extrabold">__</span>
-        </div>
+        <div class="flex gap-4" id="underline"></div>
         <!--end of underline -->
         <!-- hint -->
-        <p class="container text-3xl font-bold">
+        <p class="container text-3xl font-bold hint">
           Hint:An art from using colors on a surface to create images or
           expression.
         </p>
         <!--end of hint -->
         <!-- guess counter -->
         <span class="text-3xl font-bold">
-          Incorrect guesses : <span class="text-red-700"> 0 / 6 </span>
+          Incorrect guesses :
+          <span class="guessCount text-red-700"> 0 / 6 </span>
         </span>
         <!--end of guess counter -->
         <!-- keyboard -->
-        <div class="flex flex-wrap justify-center gap-2">
-          <button
-            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
-          >
-            A
-          </button>
-          <button
-            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
-          >
-            B
-          </button>
-          <button
-            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
-          >
-            C
-          </button>
-          <button
-            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
-          >
-            D
-          </button>
-          <button
-            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
-          >
-            E
-          </button>
-          <button
-            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
-          >
-            F
-          </button>
-          <button
-            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
-          >
-            G
-          </button>
-          <button
-            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
-          >
-            H
-          </button>
-          <button
-            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
-          >
-            I
-          </button>
-          <button
-            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
-          >
-            J
-          </button>
-          <button
-            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
-          >
-            K
-          </button>
-          <button
-            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
-          >
-            L
-          </button>
-          <button
-            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
-          >
-            M
-          </button>
-          <button
-            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
-          >
-            N
-          </button>
-          <button
-            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
-          >
-            O
-          </button>
-          <button
-            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
-          >
-            P
-          </button>
-          <button
-            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
-          >
-            Q
-          </button>
-          <button
-            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
-          >
-            R
-          </button>
-          <button
-            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
-          >
-            S
-          </button>
-          <button
-            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
-          >
-            T
-          </button>
-          <button
-            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
-          >
-            U
-          </button>
-          <button
-            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
-          >
-            V
-          </button>
-          <button
-            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
-          >
-            W
-          </button>
-          <button
-            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
-          >
-            X
-          </button>
-          <button
-            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
-          >
-            Y
-          </button>
-          <button
-            class="bg-purple-300 w-10 h-10 text-xl rounded-xl p-9 flex items-center justify-center hover:bg-purple-500 duration-500"
-          >
-            Z
-          </button>
-        </div>
+        <div class="flex flex-wrap justify-center gap-2 button-parent"></div>
         <!--end of keyboard -->
         <!-- start btn -->
-         <button id="myBtn" type="button" class="text-3xl bg-red-600 rounded-xl p-4 hover:text-white hover:bg-red-700 duration-500">start</button>
+        <button
+          id="myBtn"
+          type="button"
+          class="text-3xl bg-red-600 rounded-xl p-4 hover:text-white hover:bg-red-700 duration-500"
+        >
+          start
+        </button>
         <!--end of start btn -->
       </div>
-    </div>
+      <!-- modal -->
+      <section
+        id="modal"
+        class="w-full h-full hidden bg-gray-900/10 left-0 right-0 top-0 bottom-0"
+      >
+        <div
+          id="gameOverMessage"
+          class="animate__animated animate__fadeIn rounded-lg flex flex-col bg-purple-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-6 text-center gap-8 font-bold container w-[50%] items-center justify-center absolute"
+        >
+          <h1 class="text-red-800 text-3xl">GAME OVER</h1>
+          <p class="text-2xl text-">Would You Want To Play Again?</p>
+          <div class="flex gap-4">
+            <button
+              id="myBtnY"
+              class="bg-green-600 px-8 py-4 rounded-2xl text-white hover:bg-green-700 duration-500"
+            >
+              YES
+            </button>
+            <button
+              id="myBtnN"
+              class="bg-red-600 px-8 py-4 rounded-2xl text-white hover:bg-red-700 duration-500"
+            >
+              NO
+            </button>
+          </div>
+        </div>
 
+        <div
+          id="goodbyeMessage"
+          class="animate__animated animate__fadeIn rounded-lg flex flex-col bg-purple-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-6 text-center gap-8 font-bold container w-[50%] items-center justify-center hidden absolute"
+        >
+          <h1 class="text-red-800 text-3xl">OK BYE</h1>
+          <p class="text-2xl text-">&#128513;</p>
+          <button
+            id="okBtn"
+            class="bg-red-600 px-8 py-4 rounded-2xl text-white hover:bg-red-700 duration-500"
+          >
+            ok
+          </button>
+        </div>
+      </section>
+      <!--end of modal -->
+    </div>
+    <script src="./assets/js/word.js"></script>
     <script src="./assets/js/input.js"></script>
   </body>
 </html>
